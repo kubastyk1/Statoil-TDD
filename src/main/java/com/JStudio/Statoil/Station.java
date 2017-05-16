@@ -13,7 +13,7 @@ public class Station {
 	}
 
 	public void addPetrol(Petrol petrol, int litersOfFuel) {
-		// TODO Auto-generated method stub
+
 		for(Container container : containerList){
 			if(container.getPetrolType() == petrol.getPetrolType()){
 				container.addPetrol(litersOfFuel);
