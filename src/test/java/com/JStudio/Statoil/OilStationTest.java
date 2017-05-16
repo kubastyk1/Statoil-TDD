@@ -7,9 +7,7 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
-import junit.framework.TestCase;
-
-public class OilStationTest extends TestCase {
+public class OilStationTest {
 
 	Station station;
 	Container container1;
@@ -37,8 +35,8 @@ public class OilStationTest extends TestCase {
 		station.addPetrol(petrol, litersOfFuel);
 		station.addPetrol(petrol2, litersOfFuel2);
 
-		assertThat(station.getContainerList.get(0).getHowManyLiters, is(litersOfFuel));
-		assertThat(station.getContainerList.get(0).getHowManyLiters, is(litersOfFuel2));
+		assertThat(station.getContainerList().get(0).getHowManyLiters(), is(litersOfFuel));
+		assertThat(station.getContainerList().get(1).getHowManyLiters(), is(litersOfFuel2));
 	}
 
 }
