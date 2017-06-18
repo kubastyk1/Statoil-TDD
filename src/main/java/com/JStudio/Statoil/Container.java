@@ -12,7 +12,13 @@ public class Container {
 	}
 
 	public void addPetrol(double litersOfFuel) {
-		howManyLiters += litersOfFuel;
+		double bothCapacity = howManyLiters + litersOfFuel;
+
+		if(bothCapacity < fullCapacity){
+			howManyLiters = bothCapacity;
+		}else{
+			howManyLiters = fullCapacity;
+		}
 	}
 
 	public PetrolType getPetrolType() {
