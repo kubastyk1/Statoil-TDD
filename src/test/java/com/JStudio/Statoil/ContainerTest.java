@@ -51,4 +51,13 @@ public class ContainerTest {
 
 		assertThat(container1.getCurrentCapacity(), is(container1.getFullCapacity() - litersOfPetrol));
 	}
+
+	@Test
+	public void checkIfPetrolIsUnderConteinerLimit(){
+
+		double litersOfPetrol = 1000;
+		container1.removePetrol(litersOfPetrol);
+
+		assertThat(container1.getCurrentCapacity(), is(0.0));
+	}
 }
