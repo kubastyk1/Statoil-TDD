@@ -2,6 +2,7 @@ package com.JStudio.Statoil;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,7 +10,6 @@ import org.junit.Test;
 public class CustomerTest {
 
 	Station station;
-	Petrol petrol;
 	Container container;
 	Customer customer;
 	double containerSize = 100;
@@ -18,9 +18,8 @@ public class CustomerTest {
 	public void setUp(){
 
 		station = new Station();
-		petrol = new Petrol(PetrolType.PB95);
 		container = new Container(PetrolType.PB95);
-		customer = new Customer();
+		customer = new Customer(station, new Car(PetrolType.PB95, 100));
 
 		container.addPetrol(containerSize);
 		station.addContainer(container);

@@ -11,18 +11,13 @@ public class OilStationTest {
 	Station station;
 	Container container1;
 	Container container2;
-	Petrol petrol;
-	Petrol petrol2;
 
 	@Before
 	public void setUp(){
 
 		station = new Station();
-		petrol = new Petrol(PetrolType.PB95);
-		petrol2 = new Petrol(PetrolType.DIESEL);
-
-		container1 = new Container(petrol.getPetrolType());
-		container2 = new Container(petrol2.getPetrolType());
+		container1 = new Container(PetrolType.PB95);
+		container2 = new Container(PetrolType.DIESEL);
 
 		station.addContainer(container1);
 		station.addContainer(container2);
@@ -34,8 +29,8 @@ public class OilStationTest {
 		double litersOfFuel = 1000;
 		double litersOfFuel2 = 2500;
 
-		station.addPetrol(petrol, litersOfFuel);
-		station.addPetrol(petrol2, litersOfFuel2);
+		station.addPetrol(PetrolType.PB95, litersOfFuel);
+		station.addPetrol(PetrolType.DIESEL, litersOfFuel2);
 
 		assertThat(station.getContainerList().get(0).getCurrentCapacity(), is(litersOfFuel));
 		assertThat(station.getContainerList().get(1).getCurrentCapacity(), is(litersOfFuel2));
@@ -45,8 +40,8 @@ public class OilStationTest {
 	public void removePetrolFromContainer(){
 
 		double litersOfPetrol = 1000;
-		station.addPetrol(petrol, station.getContainerList().get(0).getFullCapacity());
-		station.removePetrol(petrol, litersOfPetrol);
+		station.addPetrol(PetrolType.PB95, station.getContainerList().get(0).getFullCapacity());
+		station.removePetrol(PetrolType.PB95, litersOfPetrol);
 
 		assertThat(station.getContainerList().get(0).getCurrentCapacity(),
 				is(station.getContainerList().get(0).getFullCapacity() - litersOfPetrol));

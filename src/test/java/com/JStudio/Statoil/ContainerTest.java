@@ -10,16 +10,11 @@ public class ContainerTest {
 
 	Container container1;
 	Container container2;
-	Petrol petrol;
-	Petrol petrol2;
 
 	@Before
 	public void setUp(){
 		container1 = new Container(PetrolType.PB95);
 		container2 = new Container(PetrolType.DIESEL);
-
-		petrol = new Petrol(PetrolType.PB95);
-		petrol2 = new Petrol(PetrolType.DIESEL);
 	}
 
 	@Test

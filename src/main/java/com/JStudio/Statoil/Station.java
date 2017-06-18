@@ -12,19 +12,19 @@ public class Station {
 		containerList.add(container);
 	}
 
-	public void addPetrol(Petrol petrol, double litersOfPetrol) {
+	public void addPetrol(PetrolType petrol, double litersOfPetrol) {
 
 		for(Container container : containerList){
-			if(container.getPetrolType() == petrol.getPetrolType()){
+			if(container.getPetrolType() == petrol){
 				container.addPetrol(litersOfPetrol);
 			}
 		}
 	}
 
-	public void removePetrol(Petrol petrol, double litersOfPetrol){
+	public void removePetrol(PetrolType petrol, double litersOfPetrol){
 
 		for(Container container : containerList){
-			if(container.getPetrolType() == petrol.getPetrolType()){
+			if(container.getPetrolType() == petrol){
 				container.removePetrol(litersOfPetrol);
 			}
 		}
