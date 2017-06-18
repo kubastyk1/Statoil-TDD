@@ -3,17 +3,17 @@ package com.JStudio.Statoil;
 public class Car {
 
 	private PetrolType petrolType;
-	private double currentCapacity;
-	private double fullCapacity;
+	private double currentPetrolCapacity;
+	private double fullPetrolCapacity;
 
 	public Car(PetrolType petrolType, double fullCapacity) {
 		super();
 		this.petrolType = petrolType;
-		this.fullCapacity = fullCapacity;
+		this.fullPetrolCapacity = fullCapacity;
 	}
 
 	public void tankPetrol(double amountOfPetrol){
-		currentCapacity += amountOfPetrol;
+		currentPetrolCapacity += amountOfPetrol;
 	}
 
 
@@ -21,16 +21,16 @@ public class Car {
 		return petrolType;
 	}
 
-	public double getCurrentCapacity() {
-		return currentCapacity;
+	public double getCurrentPetrolCapacity() {
+		return currentPetrolCapacity;
 	}
 
-	public void setCurrentCapacity(double currentCapacity) {
-		this.currentCapacity = currentCapacity;
+	public void setCurrentPetrolCapacity(double currentCapacity) {
+		this.currentPetrolCapacity = currentCapacity;
 	}
 
 	public double getFullCapacity() {
-		return fullCapacity;
+		return fullPetrolCapacity;
 	}
 
 }

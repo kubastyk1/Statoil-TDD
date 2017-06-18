@@ -29,10 +29,10 @@ public class CustomerTest {
 	public void buyPetrolTest(){
 
 		double litersOfPetrol = 40;
-		double oldAmountOfPetrolInCar = customer.getCar().getCurrentCapacity();
+		double oldAmountOfPetrolInCar = customer.getCar().getCurrentPetrolCapacity();
 		customer.buyPetrol(PetrolType.PB95, litersOfPetrol);
 
 		assertThat(station.getContainerList().get(0).getCurrentCapacity(), is(containerSize - litersOfPetrol));
-		assertTrue(customer.getCar().getCurrentCapacity() > oldAmountOfPetrolInCar);
+		assertTrue(customer.getCar().getCurrentPetrolCapacity() > oldAmountOfPetrolInCar);
 	}
 }
