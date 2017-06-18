@@ -3,15 +3,15 @@ package com.JStudio.Statoil;
 public class Container {
 
 	private PetrolType petrolType;
-	private int howManyLiters;
+	private double howManyLiters;
+	private double fullCapacity = 5000;
 
 	public Container(PetrolType petrolType) {
 
 		this.petrolType = petrolType;
 	}
 
-	public void addPetrol(int litersOfFuel) {
-
+	public void addPetrol(double litersOfFuel) {
 		howManyLiters += litersOfFuel;
 	}
 
@@ -23,13 +23,15 @@ public class Container {
 		this.petrolType = petrolType;
 	}
 
-	public int getHowManyLiters() {
+	public double getHowManyLiters() {
 		return howManyLiters;
 	}
 
-	public void setHowManyLiters(int howManyLiters) {
+	public void setHowManyLiters(double howManyLiters) {
 		this.howManyLiters = howManyLiters;
 	}
 
-
+	public double getFullCapacity() {
+		return fullCapacity;
+	}
 }

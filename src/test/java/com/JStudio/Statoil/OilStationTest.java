@@ -28,8 +28,8 @@ public class OilStationTest {
 
 		Petrol petrol = new Petrol(PetrolType.PB95);
 		Petrol petrol2 = new Petrol(PetrolType.DIESEL);
-		int litersOfFuel = 1000;
-		int litersOfFuel2 = 2500;
+		double litersOfFuel = 1000;
+		double litersOfFuel2 = 2500;
 
 		station.addPetrol(petrol, litersOfFuel);
 		station.addPetrol(petrol2, litersOfFuel2);
