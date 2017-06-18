@@ -44,9 +44,9 @@ public class OilStationTest {
 		Petrol petrol = new Petrol(PetrolType.PB95);
 		Petrol petrol2 = new Petrol(PetrolType.DIESEL);
 
-		station.addPetrol(petrol, container.getFullCapacity() + 2000);
+		station.addPetrol(petrol, station.getContainerList().get(0).getFullCapacity() + 2000);
 
-		assertThat(station.getContainerList().get(0).getHowManyLiters(), is(container.getFullCapacity()));
+		assertThat(station.getContainerList().get(0).getHowManyLiters(), is(station.getContainerList().get(0).getFullCapacity()));
 	}
 
 }
