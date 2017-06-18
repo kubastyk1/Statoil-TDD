@@ -40,4 +40,9 @@ public class Container {
 	public double getFullCapacity() {
 		return fullCapacity;
 	}
+
+	public void removePetrol(double litersOfPetrol) {
+
+		currentCapacity -= litersOfPetrol;
+	}
 }

@@ -21,6 +21,15 @@ public class Station {
 		}
 	}
 
+	public void removePetrol(Petrol petrol, double litersOfPetrol){
+
+		for(Container container : containerList){
+			if(container.getPetrolType() == petrol.getPetrolType()){
+				container.removePetrol(litersOfPetrol);
+			}
+		}
+	}
+
 	public List<Container> getContainerList() {
 		return containerList;
 	}
