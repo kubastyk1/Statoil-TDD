@@ -11,8 +11,8 @@ public class Container {
 		this.petrolType = petrolType;
 	}
 
-	public void addPetrol(double litersOfFuel) {
-		double bothCapacity = currentCapacity + litersOfFuel;
+	public void addPetrol(double litersOfPetrol) {
+		double bothCapacity = currentCapacity + litersOfPetrol;
 
 		if(bothCapacity < fullCapacity){
 			currentCapacity = bothCapacity;
@@ -21,6 +21,16 @@ public class Container {
 		}
 	}
 
+	public void removePetrol(double litersOfPetrol) {
+
+		double bothCapacity = currentCapacity - litersOfPetrol;
+
+		if(bothCapacity > 0){
+			currentCapacity = bothCapacity;
+		}else{
+			currentCapacity = 0;
+		}
+	}
 	public PetrolType getPetrolType() {
 		return petrolType;
 	}
@@ -39,10 +49,5 @@ public class Container {
 
 	public double getFullCapacity() {
 		return fullCapacity;
-	}
-
-	public void removePetrol(double litersOfPetrol) {
-
-		currentCapacity -= litersOfPetrol;
 	}
 }
