@@ -34,19 +34,18 @@ public class OilStationTest {
 		station.addPetrol(petrol, litersOfFuel);
 		station.addPetrol(petrol2, litersOfFuel2);
 
-		assertThat(station.getContainerList().get(0).getHowManyLiters(), is(litersOfFuel));
-		assertThat(station.getContainerList().get(1).getHowManyLiters(), is(litersOfFuel2));
+		assertThat(station.getContainerList().get(0).getCurrentCapacity(), is(litersOfFuel));
+		assertThat(station.getContainerList().get(1).getCurrentCapacity(), is(litersOfFuel2));
 	}
 
 	@Test
 	public void checkIfPetrolIsNotOverContainerLimit(){
 
 		Petrol petrol = new Petrol(PetrolType.PB95);
-		Petrol petrol2 = new Petrol(PetrolType.DIESEL);
 
 		station.addPetrol(petrol, station.getContainerList().get(0).getFullCapacity() + 2000);
 
-		assertThat(station.getContainerList().get(0).getHowManyLiters(), is(station.getContainerList().get(0).getFullCapacity()));
+		assertThat(station.getContainerList().get(0).getCurrentCapacity(), is(station.getContainerList().get(0).getFullCapacity()));
 	}
 
 }

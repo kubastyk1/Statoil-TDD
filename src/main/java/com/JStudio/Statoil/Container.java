@@ -3,7 +3,7 @@ package com.JStudio.Statoil;
 public class Container {
 
 	private PetrolType petrolType;
-	private double howManyLiters;
+	private double currentCapacity;
 	private double fullCapacity = 5000;
 
 	public Container(PetrolType petrolType) {
@@ -12,12 +12,12 @@ public class Container {
 	}
 
 	public void addPetrol(double litersOfFuel) {
-		double bothCapacity = howManyLiters + litersOfFuel;
+		double bothCapacity = currentCapacity + litersOfFuel;
 
 		if(bothCapacity < fullCapacity){
-			howManyLiters = bothCapacity;
+			currentCapacity = bothCapacity;
 		}else{
-			howManyLiters = fullCapacity;
+			currentCapacity = fullCapacity;
 		}
 	}
 
@@ -29,12 +29,12 @@ public class Container {
 		this.petrolType = petrolType;
 	}
 
-	public double getHowManyLiters() {
-		return howManyLiters;
+	public double getCurrentCapacity() {
+		return currentCapacity;
 	}
 
-	public void setHowManyLiters(double howManyLiters) {
-		this.howManyLiters = howManyLiters;
+	public void setCurrentCapacity(double currentCapacity) {
+		this.currentCapacity = currentCapacity;
 	}
 
 	public double getFullCapacity() {
