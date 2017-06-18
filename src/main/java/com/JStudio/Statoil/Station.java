@@ -12,11 +12,11 @@ public class Station {
 		containerList.add(container);
 	}
 
-	public void addPetrol(Petrol petrol, double litersOfFuel) {
+	public void addPetrol(Petrol petrol, double litersOfPetrol) {
 
 		for(Container container : containerList){
 			if(container.getPetrolType() == petrol.getPetrolType()){
-				container.addPetrol(litersOfFuel);
+				container.addPetrol(litersOfPetrol);
 			}
 		}
 	}
