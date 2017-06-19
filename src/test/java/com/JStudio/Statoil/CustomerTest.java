@@ -43,8 +43,6 @@ public class CustomerTest {
 
 		customer.buyPetrol(PetrolType.PB95, litersOfPetrol);
 
-		PetrolRepository pr = new PetrolRepository();
-		double petrolPrice = pr.getPrice(PetrolType.PB95);
-		assertThat(customer.getTankCost(), is(litersOfPetrol * petrolPrice));
+		assertThat(customer.getTankCost(), is(litersOfPetrol * new PetrolRepository().getPrice(PetrolType.PB95)));
 	}
 }
