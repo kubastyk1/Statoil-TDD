@@ -15,7 +15,7 @@ public class CustomerTest {
 	double containerSize = 100;
 
 	@Before
-	public void setUp(){
+	public void setUp() {
 
 		station = new Station();
 		container = new Container(PetrolType.PB95);
@@ -26,13 +26,26 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void buyPetrolTest(){
+	public void buyPetrolTest() {
 
 		double litersOfPetrol = 40;
 		double oldAmountOfPetrolInCar = customer.getCar().getCurrentPetrolCapacity();
+
 		customer.buyPetrol(PetrolType.PB95, litersOfPetrol);
 
 		assertThat(station.getContainerList().get(0).getCurrentCapacity(), is(containerSize - litersOfPetrol));
 		assertTrue(customer.getCar().getCurrentPetrolCapacity() > oldAmountOfPetrolInCar);
+	}
+
+	@Test
+	public void paymentTest(){
+		double litersOfPetrol = 40;
+		double oldAmountOfPetrolInCar = customer.getCar().getCurrentPetrolCapacity();
+
+		customer.buyPetrol(PetrolType.PB95, litersOfPetrol);
+
+		PetrolRepository pr = new PetrolRepository();
+		double petrolPrice = pr.getPrice(PetrolType.PB95);
+		assertThat(customer.getTankCost(), is(litersOfPetrol * petrolPrice));
 	}
 }
