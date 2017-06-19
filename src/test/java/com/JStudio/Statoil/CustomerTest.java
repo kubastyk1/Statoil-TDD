@@ -40,7 +40,6 @@ public class CustomerTest {
 	@Test
 	public void paymentTest(){
 		double litersOfPetrol = 40;
-		double oldAmountOfPetrolInCar = customer.getCar().getCurrentPetrolCapacity();
 
 		customer.buyPetrol(PetrolType.PB95, litersOfPetrol);
 
