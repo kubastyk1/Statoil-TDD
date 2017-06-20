@@ -18,13 +18,7 @@ public class Station {
 
 		for(Container container : containerList){
 			if(container.getPetrolType() == petrol){
-				if(container.getDifference() >= litersRemain){
-					container.addPetrol(litersRemain);
-					break;
-				}else{
-					litersRemain -= container.getDifference();
-					container.addPetrol(container.getDifference());
-				}
+				litersRemain = distributePetrol(container, litersRemain);
 			}
 		}
 	}
@@ -46,4 +40,14 @@ public class Station {
 		this.containerList = containerList;
 	}
 
+	private double distributePetrol(Container container, double litersRemain){
+		if(container.getDifference() >= litersRemain){
+			container.addPetrol(litersRemain);
+		}else{
+			litersRemain -= container.getDifference();
+			container.addPetrol(container.getDifference());
+		}
+
+		return litersRemain;
+	}
 }
