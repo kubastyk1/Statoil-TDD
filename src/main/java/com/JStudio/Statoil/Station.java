@@ -12,7 +12,7 @@ public class Station {
 		containerList.add(container);
 	}
 
-	public void addPetrol(PetrolType petrol, double litersOfPetrol) {
+	public double addPetrol(PetrolType petrol, double litersOfPetrol) {
 
 		double litersRemain = litersOfPetrol;
 
@@ -21,6 +21,8 @@ public class Station {
 				litersRemain = distributePetrol(container, litersRemain);
 			}
 		}
+
+		return litersRemain;
 	}
 
 	public void removePetrol(PetrolType petrol, double litersOfPetrol){
@@ -43,6 +45,7 @@ public class Station {
 	private double distributePetrol(Container container, double litersRemain){
 		if(container.getDifference() >= litersRemain){
 			container.addPetrol(litersRemain);
+			litersRemain = 0;
 		}else{
 			litersRemain -= container.getDifference();
 			container.addPetrol(container.getDifference());
