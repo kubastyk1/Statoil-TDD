@@ -46,4 +46,14 @@ public class OilStationTest {
 		assertThat(station.getContainerList().get(0).getCurrentCapacity(),
 				is(station.getContainerList().get(0).getFullCapacity() - litersOfPetrol));
 	}
+
+	@Test
+	public void addToMuchPetrolToContainer(){
+		double litersOfFuel = 7000;
+
+		station.addPetrol(PetrolType.PB95, litersOfFuel);
+
+		assertThat(station.getContainerList().get(0).getCurrentCapacity(), is(station.getContainerList().get(0).getFullCapacity()));
+		assertThat(station.getContainerList().get(2).getCurrentCapacity(), is(litersOfFuel - station.getContainerList().get(0).getFullCapacity()));
+	}
 }

@@ -57,4 +57,7 @@ public class CustomerTest {
 		assertTrue(customer.getCar().getCurrentPetrolCapacity() > oldAmountOfPetrolInCar);
 		assertThat(customer.getTankCost(), is(difference * new PetrolRepository().getPrice(PetrolType.PB95)));
 	}
+
+
+
 }
