@@ -14,9 +14,19 @@ public class Station {
 
 	public void addPetrol(PetrolType petrol, double litersOfPetrol) {
 
+		double litersRemain = litersOfPetrol;
+		double difference;
+
 		for(Container container : containerList){
+			difference = container.getFullCapacity() - container.getCurrentCapacity();
 			if(container.getPetrolType() == petrol){
-				container.addPetrol(litersOfPetrol);
+				if(difference >= litersRemain){
+					container.addPetrol(litersRemain);
+					break;
+				}else{
+					litersRemain -= difference;
+					container.addPetrol(difference);
+				}
 			}
 		}
 	}

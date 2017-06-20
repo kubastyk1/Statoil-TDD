@@ -3,7 +3,7 @@ package com.JStudio.Statoil;
 public class Container {
 
 	private PetrolType petrolType;
-	private double currentCapacity;
+	private double currentCapacity = 0;
 	private double fullCapacity = 5000;
 
 	public Container(PetrolType petrolType) {

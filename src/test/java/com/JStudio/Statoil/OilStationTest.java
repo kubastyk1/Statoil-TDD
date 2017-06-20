@@ -11,6 +11,7 @@ public class OilStationTest {
 	Station station;
 	Container container1;
 	Container container2;
+	Container container3;
 
 	@Before
 	public void setUp(){
@@ -18,9 +19,11 @@ public class OilStationTest {
 		station = new Station();
 		container1 = new Container(PetrolType.PB95);
 		container2 = new Container(PetrolType.DIESEL);
+		container3 = new Container(PetrolType.PB95);
 
 		station.addContainer(container1);
 		station.addContainer(container2);
+		station.addContainer(container3);
 	}
 
 	@Test
@@ -49,7 +52,7 @@ public class OilStationTest {
 
 	@Test
 	public void addToMuchPetrolToContainer(){
-		double litersOfFuel = 7000;
+		double litersOfFuel = 6000;
 
 		station.addPetrol(PetrolType.PB95, litersOfFuel);
 
