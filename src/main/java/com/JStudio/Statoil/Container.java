@@ -31,6 +31,11 @@ public class Container {
 			currentCapacity = 0;
 		}
 	}
+
+	public double getDifference(){
+		return fullCapacity - currentCapacity;
+	}
+
 	public PetrolType getPetrolType() {
 		return petrolType;
 	}

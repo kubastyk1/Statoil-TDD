@@ -9,17 +9,14 @@ import org.junit.Test;
 public class OilStationTest {
 
 	Station station;
-	Container container1;
-	Container container2;
-	Container container3;
 
 	@Before
 	public void setUp(){
 
 		station = new Station();
-		container1 = new Container(PetrolType.PB95);
-		container2 = new Container(PetrolType.DIESEL);
-		container3 = new Container(PetrolType.PB95);
+		Container container1 = new Container(PetrolType.PB95);
+		Container container2 = new Container(PetrolType.DIESEL);
+		Container container3 = new Container(PetrolType.PB95);
 
 		station.addContainer(container1);
 		station.addContainer(container2);
