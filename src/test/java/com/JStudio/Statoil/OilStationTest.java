@@ -14,9 +14,9 @@ public class OilStationTest {
 	public void setUp(){
 
 		station = new Station();
-		Container container1 = new Container(PetrolType.PB95);
-		Container container2 = new Container(PetrolType.DIESEL);
-		Container container3 = new Container(PetrolType.PB95);
+		Container container1 = new Container(PetrolType.PB95, 5000.0);
+		Container container2 = new Container(PetrolType.DIESEL, 5000.0);
+		Container container3 = new Container(PetrolType.PB95, 5000.0);
 
 		station.addContainer(container1);
 		station.addContainer(container2);

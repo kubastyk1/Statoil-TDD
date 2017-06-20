@@ -13,8 +13,8 @@ public class ContainerTest {
 
 	@Before
 	public void setUp(){
-		container1 = new Container(PetrolType.PB95);
-		container2 = new Container(PetrolType.DIESEL);
+		container1 = new Container(PetrolType.PB95, 5000);
+		container2 = new Container(PetrolType.DIESEL, 5000);
 	}
 
 	@Test

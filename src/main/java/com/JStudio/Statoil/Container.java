@@ -1,14 +1,11 @@
 package com.JStudio.Statoil;
 
-public class Container {
+public class Container extends Tank{
 
-	private PetrolType petrolType;
-	private double currentCapacity = 0;
-	private double fullCapacity = 5000;
-
-	public Container(PetrolType petrolType) {
+	public Container(PetrolType petrolType, double fullCapacity) {
 
 		this.petrolType = petrolType;
+		this.fullCapacity = fullCapacity;
 	}
 
 	public void addPetrol(double litersOfPetrol) {

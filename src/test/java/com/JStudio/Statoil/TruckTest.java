@@ -13,8 +13,8 @@ public class TruckTest {
 	@Before
 	public void setUp(){
 		station = new Station();
-		station.addContainer(new Container(PetrolType.PB95));
-		station.addContainer(new Container(PetrolType.PB95));
+		station.addContainer(new Container(PetrolType.PB95, 2000));
+		station.addContainer(new Container(PetrolType.PB95, 2000));
 		truck = new Truck(station, PetrolType.PB95, 2000);
 	}
 

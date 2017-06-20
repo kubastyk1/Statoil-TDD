@@ -1,11 +1,8 @@
 package com.JStudio.Statoil;
 
-public class Truck {
+public class Truck extends Tank{
 
-	private double fullCapacity;
-	private double currentCapacity;
 	private Station currentStation;
-	private PetrolType petrolType;
 
 	public Truck(Station station, PetrolType petrolType, double fullCapacity) {
 		this.currentStation = station;
@@ -18,15 +15,6 @@ public class Truck {
 		double remainPetrol = currentStation.addPetrol(petrolType, currentCapacity);
 		if(remainPetrol == 0)
 			currentCapacity = 0;
-	}
-
-	public double getFullCapacity() {
-
-		return fullCapacity;
-	}
-
-	public double getCurrentCapacity() {
-		return currentCapacity;
 	}
 
 }
